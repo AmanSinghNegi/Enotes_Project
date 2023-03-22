@@ -12,7 +12,10 @@ public class UserDao {
     private static Connection conn;
     public static Connection getCOnn()
     {
-        
+        if(conn==null)
+        {
+            
+        }
         
         return conn;
     }
