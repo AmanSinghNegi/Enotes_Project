@@ -4,6 +4,8 @@
     Author     : 91771
 --%>
 
+<%@page import="com.Db.DBConnect"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +26,7 @@
     </head>
     <body>
         <%@include file="all_components/navbar.jsp" %>
+        
         <div class="back-img" style="color:red">hello</div>
     </body>
 </html>
