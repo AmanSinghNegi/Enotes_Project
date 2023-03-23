@@ -19,7 +19,7 @@ public class DBConnect {
         if(conn==null)
         {
             Class.forName("com.mysql.jdbc.Driver");
-            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube\",\"root\",\"\"");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/enotes","root","");
         }
      }
         catch(Exception e)
