@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -65,15 +66,19 @@ public class UserServlet1 extends HttpServlet {
 //                                out.print(dao.addUser(us));
 //                                out.print(f);
 //                                exit();
-                
+                HttpSession session;
                 if(f)
                 {
-                    out.println("Successfull");
+                    session=request.getSession();
+                    session.setAttribute("reg-success","Registration Successfully....");
+                    response.sendRedirect("signup.jsp");
                 }
                 
                 else
                 {
-                    out.println("Data Not Inserted");
+                    session=request.getSession();
+                    session.setAttribute("Failed-msg","Something Went Wrong On Server");
+                    response.sendRedirect("signup.jsp");
                 }
 //            }
                
