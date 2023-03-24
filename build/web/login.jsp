@@ -25,12 +25,28 @@
     <div class="loginbox">
         <img src="img/avatar2.png" class="avatar">
     <h1>Login Here</h1><BR>
-    <form>
+    
+            
+              <%
+            String FailedMsg=(String)session.getAttribute("Log-Failed");
+            
+            if(FailedMsg!=null)
+            {%>
+            <div class="alert alert-danger" role="alert">
+  <%=FailedMsg  %>
+</div>
+            <%
+                session.removeAttribute("Log-Failed");
+                }
+            %>
+    
+    <form action="loginServlet" method="post">
     <p> Username</p>
-    <input type="text" name="" placeholder="Enter Username">
+    <input type="text" name="username" placeholder="Enter Username" required>
     <p>Password </p>
-    <input type="password" name="" placeholder="Enter Password">
-    <input type="submit" name="" value="Login"> <br><br>
+    <input type="password" name="userpass" placeholder="Enter Password" required>
+    <div>
+        <input type="submit" name="" value="Login"> </div><br><br>
     </form>
     </div>
     </div>

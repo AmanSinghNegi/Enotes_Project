@@ -8,6 +8,7 @@ import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 /**
  *
  * @author 91771
@@ -51,6 +52,32 @@ private Connection conn;
                 e.printStackTrace();
                 out.println("<h1>Error.........</h1>");
             }
+        return f;
+    }
+    
+    public boolean loginUser(UserDetails us)
+    {
+        boolean f=false;
+        
+        try
+        {
+            String query="select * from user where email=? and password=?";
+            PreparedStatement pstmt=conn.prepareStatement(query);
+            pstmt.setString(1,us.getEmail());
+            pstmt.setString(2,us.getPassword());
+            
+            ResultSet rs=pstmt.executeQuery();
+            
+            if(rs.next())
+            {
+                f=true;
+            }
+            
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         return f;
     }
 

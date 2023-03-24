@@ -22,33 +22,60 @@
 </div>
     <div class="container0">
         
-        <div class="title2">SIGNUP FORM</div>
-        <form action="UserServlet1" method="get"> <br>
-           
+        <div class="title2">SIGNUP FORM</div><br>
+        
+        <%
+            String regMsg=(String)session.getAttribute("reg-success");
+            
+            if(regMsg!=null)
+            {%>
+            <div class="alert alert-success" role="alert">
+  <%=regMsg %>
+</div>
+            <%
+                session.removeAttribute("reg-success");
+                }
+            %>
+            
+            
+              <%
+            String FailedMsg=(String)session.getAttribute("Failed-msg");
+            
+            if(FailedMsg!=null)
+            {%>
+            <div class="alert alert-danger" role="alert">
+  <%=FailedMsg  %>
+</div>
+            <%
+                session.removeAttribute("Failed-msg");
+                }
+            %>
+        
+        <form action="UserServlet1" method="post"> <br>
             <div class="user-details" > 
                 <div class="input-box">
                     <span class="details"">Full Name</span>
-                    <input type="text"  name="fname" placeholder="Enter Your Name">
+                    <input type="text"  name="fname" placeholder="Enter Your Name" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Age</span>
-                    <input type="text"  name="uage" placeholder="Enter Your Age">
+                    <input type="text"  name="uage" placeholder="Enter Your Age" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text"  name="uemail" placeholder="Enter Your Email">
+                    <input type="text"  name="uemail" placeholder="Enter Your Email" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="text"  name="unumber" placeholder="Enter Your Number">
+                    <input type="text"  name="unumber" placeholder="Enter Your Number" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="password"  name="upass" placeholder="Enter Your Password">
+                    <input type="password"  name="upass" placeholder="Enter Your Password" required>
                 </div>
 
                
