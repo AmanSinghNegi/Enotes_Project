@@ -4,8 +4,13 @@ margin: 0;
 padding: 0;
 }
 
+.w3-wide
+{
+    margin: 10px;
+}
+
 .navigation_1{
-    background: #ff8a80;
+    background: #FFDEAD;
 }
 
 .navbar .nav-link

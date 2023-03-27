@@ -9,6 +9,7 @@ package com.user;
  * @author 91771
  */
 public class UserDetails {
+    private int id;
     private String name;
     private String age;
     private String email;
@@ -23,6 +24,7 @@ public class UserDetails {
 
     public UserDetails(String name, String age, String email, String phone_number, String password) {
         super();
+        this.id=id;
         this.name = name;
         this.age = age;
         this.email = email;
@@ -31,6 +33,11 @@ public class UserDetails {
 //        this.gender = gender;
     }
 
+    public int getID()
+    {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }
@@ -55,6 +62,11 @@ public class UserDetails {
 //        return gender;
 //    }
 
+    public void setID(int id)
+    {
+        this.id=id;
+    }
+    
     public void setName(String name) {
         this.name = name;
     }

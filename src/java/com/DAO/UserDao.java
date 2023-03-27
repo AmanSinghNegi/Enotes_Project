@@ -55,9 +55,10 @@ private Connection conn;
         return f;
     }
     
-    public boolean loginUser(UserDetails us)
+    public UserDetails loginUser(UserDetails us)
     {
-        boolean f=false;
+        
+        UserDetails user = null;
         
         try
         {
@@ -70,7 +71,13 @@ private Connection conn;
             
             if(rs.next())
             {
-                f=true;
+                user=new UserDetails();
+                user.setID(rs.getInt("id"));
+                user.setName(rs.getString("name"));
+                user.setAge(rs.getString("age"));
+                user.setEmail(rs.getString("email"));
+                user.setPhone_number(rs.getString("phone_number"));
+                user.setPassword("password");
             }
             
         }
@@ -78,7 +85,7 @@ private Connection conn;
         {
             e.printStackTrace();
         }
-        return f;
+        return user;
     }
 
 }

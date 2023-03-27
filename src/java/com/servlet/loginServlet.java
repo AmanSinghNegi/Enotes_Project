@@ -36,12 +36,19 @@ public class loginServlet extends HttpServlet {
         us.setPassword(password);
         
          UserDao dao=new UserDao(DBConnect.getCOnn());
-        boolean f=dao.loginUser(us);
+        UserDetails user=dao.loginUser(us);
+        
+//         PrintWriter out=response.getWriter();
+//
+//                out.println(user.getID());
+//                exit();
         
          HttpSession session;
-                if(f)
+                if(user!=null)
                 {
                     session=request.getSession();
+                    session.setAttribute("UserD", user);
+                    out.print(user.getAge());
                     response.sendRedirect("home.jsp");
                 }
                 
@@ -51,5 +58,9 @@ public class loginServlet extends HttpServlet {
                     session.setAttribute("Log-Failed","Invalid Email or Password");
                     response.sendRedirect("login.jsp");
                 }
+    }
+
+    private void exit() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

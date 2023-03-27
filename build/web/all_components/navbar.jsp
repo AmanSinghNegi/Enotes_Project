@@ -1,3 +1,4 @@
+<%@page import="com.user.UserDetails"%>
 <nav class="navbar navbar-expand-lg navbar-light navigation_1">
   <a class="navbar-brand" ><i class="fa fa-edge" aria-hidden="true" ></i> NOTES</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,12 +29,73 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>-->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+      
+      <%
+          UserDetails user=(UserDetails)session.getAttribute("UserD");
+          if(user!=null)
+          {%>
+          <form class="form-inline my-2 my-lg-0">
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<a href="signwqsqwsup.jsp" class="btn btn-outline-success my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#exampleModal" 
+   type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> <%= user.getName()%></a>
+      <a href="logwqsqin.jsp" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-user" aria-hidden="true"></i>
+              Logout</a>
+    </form>
+      
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="container text-center">
+              <i class="fa fa-user fa-3x"></i>
+              <h5></h5>
+              <table class="table">
+                  <tbody>
+                      <tr>
+                          <th>USER ID</th>
+                      <td><%= user.getID() %></td>
+                      </tr>
+                      <tr>
+                          <th>NAME</th>
+                          <td><%= user.getName() %></td>
+                      </tr>
+                      <tr>
+                          <th>EMAIL</th>
+                          <td><%= user.getEmail() %></td>
+                      </tr>    
+                    
+                  </tbody>
+                      
+              </table>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    <% }
+
+    else
+{%>
+<form class="form-inline my-2 my-lg-0">
 <!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
 <a href="signup.jsp" class="btn btn-outline-success my-2 my-sm-0 mr-2" 
    type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
       <a href="login.jsp" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-user" aria-hidden="true"></i>
               Login</a>
     </form>
+<%
+}%>
+          
   </div>
+
+
 </nav>
