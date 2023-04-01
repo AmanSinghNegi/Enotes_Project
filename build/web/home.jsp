@@ -22,7 +22,7 @@
             <div class="card-body text-center">
                 <img src="img/notesbg.png" alt="NOTES" class="img-fluid mx-auto" style="max-width: 440px"/>
                 <h1>START TAKING YOUR NOTES..</h1><br>
-            <a href="addnotes.jsp" class="btn btn-outline-primary">START HERE</a>
+            <a href="addNotes.jsp" class="btn btn-outline-primary">START HERE</a>
             </div>         
         </div>
         </div>
