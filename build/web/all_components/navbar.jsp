@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"> <i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp"> <i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a>
@@ -19,8 +19,8 @@
            <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Features
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Notes</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-book" aria-hidden="true"></i> Show Notes</a>
+          <a class="dropdown-item" href="addNotes.jsp"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Notes</a>
+          <a class="dropdown-item" href="showNotes.jsp"><i class="fa fa-book" aria-hidden="true"></i> Show Notes</a>
 <!--          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>-->
         </div>
@@ -36,9 +36,9 @@
           {%>
           <form class="form-inline my-2 my-lg-0">
 <!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-<a href="signwqsqwsup.jsp" class="btn btn-outline-success my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#exampleModal" 
+<a href="#" class="btn btn-outline-success my-2 my-sm-0 mr-2" data-toggle="modal" data-target="#exampleModal" 
    type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i> <%= user.getName()%></a>
-      <a href="logwqsqin.jsp" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-user" aria-hidden="true"></i>
+      <a href="LogoutServlet" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-user" aria-hidden="true"></i>
               Logout</a>
     </form>
       

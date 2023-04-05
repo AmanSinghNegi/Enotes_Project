@@ -5,6 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    UserDetails user1=(UserDetails)session.getAttribute("UserD");
+    
+    if(user1==null)
+    {
+        response.sendRedirect("login.jsp");
+        session.setAttribute("Login-error","Please Login....");
+    }
+    %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,8 +36,12 @@
       
       <%
           UserDetails us=(UserDetails)session.getAttribute("UserD");
+          if(us!=null)
+          {%>
+          <input type ="hidden" value ="<%=us.getID()%>" name="uid">
+       <%}
        %>
-       <input type ="hidden" value ="<%=us.getID()%>" name="uid">
+       
        
     <label for="exampleInputEmail1">Add Title</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title" name="title" required ="required"

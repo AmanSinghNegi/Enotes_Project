@@ -39,7 +39,31 @@
                 session.removeAttribute("Log-Failed");
                 }
             %>
+            
+            <%
+                String WithoutLogin=(String)session.getAttribute("Login-error");
+                if(WithoutLogin!=null)
+                {%>
+                <div class="alert alert-danger" role="alert">
+                    <%=WithoutLogin %>
+                </div>
+           <%
+                session.removeAttribute("Log-Failed");
+               }
+                %>
     
+                  <%
+                String Logout=(String)session.getAttribute("logout-msg");
+                if(Logout!=null)
+                {%>
+                <div class="alert alert-success" role="alert">
+                    <%= Logout %>
+                </div>
+           <%
+                session.removeAttribute("logout-msg");
+               }
+                %>
+                
     <form action="loginServlet" method="post">
     <p> Username</p>
     <input type="text" name="username" placeholder="Enter Username" required>

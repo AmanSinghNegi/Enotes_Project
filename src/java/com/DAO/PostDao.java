@@ -8,6 +8,9 @@ import com.user.Post;
 import com.user.UserDetails;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -46,6 +49,30 @@ public class PostDao {
             
         }
         return f;
+    }
+    
+    public List<Post> getData(int id)
+    {
+        List<Post> list= new ArrayList<Post>();
+        Post po=new Post();
+        try
+        {
+            String query="select*from post where id=?";
+            PreparedStatement ps=conn.prepareStatement(query);
+            ps.setInt(1, id);
+            
+            ResultSet rs=ps.executeQuery();
+            
+            while(rs.next())
+            {
+                
+            }
+        }
+        catch(Exception e)
+        {
+            
+        }
+        return list;
     }
     
 }
