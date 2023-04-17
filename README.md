@@ -1,2 +1,3 @@
 # Enotes_Project
-First Project On Servlets And JSP
+Enotes Project Based On Servlets, JSP in which you can login, register, add notes, delete notes, edit notes.
+
